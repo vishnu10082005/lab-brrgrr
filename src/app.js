@@ -1,6 +1,6 @@
 // Write your code on this file. Please don't change the existing code
 // unless absolutely needed.
-
+// import image from ""
 //Initial price of the burger
 var wholeWheatBun = 10;
 
@@ -133,7 +133,8 @@ function renderButtons() {
 function renderIngredientsBoard() {
   const items = document.querySelectorAll('.items');
   items.forEach(item => {
-    const itemName = item.textContent.trim();
+    //Using repalce to get some places between the content
+    const itemName = item.textContent.replace(/^\s+|\s+$/g, ''); 
     if (state[itemName]) {
       item.style.display = 'block';
     } else {
@@ -141,6 +142,8 @@ function renderIngredientsBoard() {
     }
   });
 }
+
+
 
 
 //Judgement 1
